@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      New Post
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg1">
+  <ion-item>
+    <ion-label class="label" position="stacked">Your Message:</ion-label>
+    <ion-textarea [(ngModel)]="postText" name="postText"></ion-textarea>
+    
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="label" position="stacked">Image Url:</ion-label>
+    <ion-input [(ngModel)]="imageUrl" name="imageUrl"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="label" position="stacked">To:</ion-label>
+    <ion-select [(ngModel)]="to">
+    <ion-select-option value="Everyone">Everyone</ion-select-option>
+    <ion-select-option *ngFor="let friend of friends" value="{{friend.name}}">
+      {{friend.name}}
+    </ion-select-option>
+  </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-button (click)="createPost()" class="send-button" color="primary"> POST </ion-button>
+  </ion-item>
+</ion-content>

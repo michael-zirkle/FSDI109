@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title class="tooltext">Friends List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg1">
+ 
+
+ <ion-item>
+  <ion-label class="label">Friend Name:</ion-label>
+  <ion-input [(ngModel)]="friendName"></ion-input>
+
+</ion-item>
+
+<ion-item>
+  
+  <ion-button class="button" (click)="register();">
+    ADD FRIEND
+  </ion-button>
+
+</ion-item>
+
+<hr>
+
+<ion-list>
+  <ion-item *ngFor="let friend of friendList">
+    <ion-label>{{friend.name}}</ion-label>
+  </ion-item>
+</ion-list>
+</ion-content>
+
